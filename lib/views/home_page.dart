@@ -21,12 +21,11 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   double modalHeightFactor = 0.0;
   bool over = false;
-  bool isComplete = false;
   final ScrollController scrollController = ScrollController();
 
   @override
   void initState() {
-    Future.delayed(const Duration(milliseconds: 800), () {
+    Future.delayed(const Duration(milliseconds: 1300), () {
       setState(() {
         modalHeightFactor = minHeightRatio;
       });
@@ -36,7 +35,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    isComplete = true;
     return Container(
       decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -88,7 +86,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                       const LardImageCard(),
+                    const  LardImageCard(),
                       mediumVerticalSpace,
                       StaggeredGrid.count(
                         crossAxisCount: 4,

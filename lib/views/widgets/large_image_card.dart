@@ -7,9 +7,8 @@ import 'package:flutter_engineer/core/app_theme.dart';
 import 'package:flutter_engineer/core/app_typography.dart';
 
 class LardImageCard extends StatelessWidget {
-  const LardImageCard({
-    super.key,
-  });
+  const LardImageCard({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -23,40 +22,41 @@ class LardImageCard extends StatelessWidget {
       child: Align(
         alignment: Alignment.bottomCenter,
         child: ClipRect(
-          child: BackdropFilter(
-            filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
-            child: AnimatedContainer(
-              duration: const Duration(milliseconds: 1500),
-              curve: Curves.decelerate,
-              width:  double.maxFinite,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(35),
-                  color: AppColors.whiteColor.withOpacity(0.5)),
-              child: Row(
-                children: [
-
-
-                  Expanded(
-                      child: Text('Glaskova St.,25',
-                          style: TextStyles.style15Regular,
-                          textAlign: TextAlign.center)),
-                  Container(
-                    padding: const EdgeInsets.all(18),
-                    decoration: BoxDecoration(
-                        shape: BoxShape.circle, color: AppColors.whiteColor),
-                    child: Icon(
-                      Icons.chevron_right_outlined,
-                      color: AppColors.accentColor,
-                      size: 18,
-                    ),
-                  )
-                ],
-              ),
+            child: BackdropFilter(
+          filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
+          child: AnimatedContainer(
+            duration: const Duration(milliseconds: 15000),
+            curve: Curves.decelerate,
+            width: double.maxFinite,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(35),
+                color: AppColors.whiteColor.withOpacity(0.5)),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Expanded(
+                    child: Text('Glaskova St.,25',
+                        style: TextStyles.style15Regular,
+                        textAlign: TextAlign.center)),
+                Container(
+                  padding: const EdgeInsets.all(18),
+                  decoration: BoxDecoration(
+                      shape: BoxShape.circle, color: AppColors.whiteColor),
+                  child: Icon(
+                    Icons.chevron_right_outlined,
+                    color: AppColors.accentColor,
+                    size: 18,
+                  ),
+                )
+              ],
             ),
           ),
-        ).animate()// uses `Animate.defaultDuration`
-            .scale(delay:500.ms,duration: 800.ms) // inherits duration from fadeIn
-            .move(delay: 300.ms, duration: 600.ms),
+        ).animate().scaleX(
+                begin: 0.1,
+                end: 1,
+                delay: 1300.ms,
+                duration: 700.ms,
+                alignment: Alignment.bottomLeft)),
       ),
     );
   }
