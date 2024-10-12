@@ -52,7 +52,7 @@ class _MapScreenState extends State<MapScreen>
             // Anchor expansion to the bottom-right corner
             child: Container(
               width: 150.w,
-              height: 150.h,
+              height: 163.sp,
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(18),
@@ -93,7 +93,7 @@ class _MapScreenState extends State<MapScreen>
             tinyHorizontalSpace,
             Text(
               title,
-              style: TextStyles.style12Medium.copyWith(
+              style: TextStyles.style11Medium.copyWith(
                   color: selectedMenu == title
                       ? AppColors.primaryColor
                       : AppColors.lighterGreyColor),

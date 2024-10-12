@@ -7,7 +7,6 @@ import 'package:flutter_engineer/constants/constants.dart';
 import 'package:flutter_engineer/constants/dimensions.dart';
 import 'package:flutter_engineer/views/widgets/app_bar.dart';
 import 'package:flutter_engineer/views/widgets/image_card.dart';
-import 'package:flutter_engineer/views/widgets/large_image_card.dart';
 import 'package:flutter_engineer/views/widgets/record.dart';
 import 'package:flutter_engineer/views/widgets/welcome_text.dart';
 
@@ -20,14 +19,13 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   double modalHeightFactor = 0.0;
-  bool over = false;
   final ScrollController scrollController = ScrollController();
 
   @override
   void initState() {
     Future.delayed(const Duration(milliseconds: 1300), () {
       setState(() {
-        modalHeightFactor = minHeightRatio;
+        modalHeightFactor = maxHeightRatio;
       });
     });
     super.initState();
@@ -59,8 +57,8 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           bottomSheet: AnimatedContainer(
             height: height(context) * modalHeightFactor,
-            duration: const Duration(milliseconds: 900),
-            curve: Curves.easeOut,
+            duration: const Duration(milliseconds:700),
+            curve: Curves.decelerate,
             decoration: BoxDecoration(
                 color: Colors.transparent,
                 borderRadius: BorderRadius.circular(25)),
@@ -71,10 +69,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 if (direction == ScrollDirection.forward &&
                     scrollController.offset == 0) {
                   modalHeightFactor = minHeightRatio;
-                  over = false;
                 } else if (direction == ScrollDirection.reverse) {
                   modalHeightFactor = maxHeightRatio;
-                  over = true;
                 }
                 setState(() {});
                 return true;
@@ -86,27 +82,27 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                    const  LardImageCard(),
+                      const ImageBox(AppImages.kitchen),
                       mediumVerticalSpace,
                       StaggeredGrid.count(
                         crossAxisCount: 4,
                         mainAxisSpacing: 10,
                         crossAxisSpacing: 10,
-                        children: [
+                        children: const [
                           StaggeredGridTile.count(
                             crossAxisCellCount: 2,
                             mainAxisCellCount: 4,
-                            child: ImageBox(AppImages.room1, over: over),
+                            child: ImageBox(AppImages.room1),
                           ),
                           StaggeredGridTile.count(
                             crossAxisCellCount: 2,
                             mainAxisCellCount: 2,
-                            child: ImageBox(AppImages.room2, over: over),
+                            child: ImageBox(AppImages.room2),
                           ),
                           StaggeredGridTile.count(
                             crossAxisCellCount: 2,
                             mainAxisCellCount: 2,
-                            child: ImageBox(AppImages.room3, over: over),
+                            child: ImageBox(AppImages.room3),
                           ),
                         ],
                       ),
@@ -116,22 +112,21 @@ class _HomeScreenState extends State<HomeScreen> {
                         mainAxisSpacing: 10,
                         crossAxisSpacing: 10,
                         children: [
-                          StaggeredGridTile.count(
+                          const StaggeredGridTile.count(
                             crossAxisCellCount: 2,
                             mainAxisCellCount: 4,
-                            child: ImageBox(AppImages.room1, over: over),
+                            child: ImageBox(AppImages.room1),
                           ),
-                          StaggeredGridTile.count(
+                          const StaggeredGridTile.count(
                             crossAxisCellCount: 2,
                             mainAxisCellCount: 2,
-                            child: ImageBox(AppImages.room2, over: over),
+                            child: ImageBox(AppImages.room2),
                           ),
-                          StaggeredGridTile.count(
+                          const StaggeredGridTile.count(
                             crossAxisCellCount: 2,
                             mainAxisCellCount: 2,
                             child: ImageBox(
                               AppImages.room3,
-                              over: over,
                             ),
                           ),
                           largeVerticalSpace(context, 0.08)

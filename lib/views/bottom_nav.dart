@@ -37,7 +37,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
       body: Stack(children: [
         pages[currentIndex],
         Positioned(
-          bottom: 0,
+          bottom: 3,
           right: 45,
           left: 45,
           child: SafeArea(
@@ -66,7 +66,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
             begin: 2,
             end: 0,
             curve: Curves.decelerate,
-            delay: 1150.ms,
+            delay: 1250.ms,
             duration: 1550.ms)
       ]),
     );
