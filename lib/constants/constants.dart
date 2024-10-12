@@ -1,5 +1,5 @@
-String FONT_FAMILY = 'Euclid';
+String fontFamily = 'Euclid';
 
-const double BODY_PADDING = 20.0;
+const double bodyPadding = 20.0;
 const double maxHeightRatio = 0.71;
 const double minHeightRatio = 0.48;

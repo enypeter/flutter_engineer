@@ -1,6 +1,5 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_engineer/constants/dimensions.dart';
 import 'package:flutter_engineer/core/app_theme.dart';
 import 'package:flutter_engineer/core/app_typography.dart';

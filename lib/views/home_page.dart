@@ -57,7 +57,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           bottomSheet: AnimatedContainer(
             height: height(context) * modalHeightFactor,
-            duration: const Duration(milliseconds:700),
+            duration: const Duration(milliseconds: 700),
             curve: Curves.decelerate,
             decoration: BoxDecoration(
                 color: Colors.transparent,

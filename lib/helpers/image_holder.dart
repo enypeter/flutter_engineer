@@ -28,18 +28,18 @@ class ImageHolder extends StatelessWidget {
   @override
   Widget build(BuildContext context) => (imagePath.contains('.svg'))
       ? SvgPicture.asset(imagePath,
-      width: width,
-      height: height,
-      fit: fit,
-      key: imageKey,
-      colorFilter:
-      color == null ? null : ColorFilter.mode(color!, BlendMode.srcIn),
-      matchTextDirection: matchTextDirection ?? false)
+          width: width,
+          height: height,
+          fit: fit,
+          key: imageKey,
+          colorFilter:
+              color == null ? null : ColorFilter.mode(color!, BlendMode.srcIn),
+          matchTextDirection: matchTextDirection ?? false)
       : Image.asset(imagePath,
-      width: width,
-      height: height,
-      fit: fit,
-      color: color,
-      key: imageKey,
-      matchTextDirection: matchTextDirection ?? false);
+          width: width,
+          height: height,
+          fit: fit,
+          color: color,
+          key: imageKey,
+          matchTextDirection: matchTextDirection ?? false);
 }

@@ -12,7 +12,7 @@ class Records extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: BODY_PADDING),
+      padding: const EdgeInsets.symmetric(horizontal: bodyPadding),
       child: Row(
         children: [
           Flexible(

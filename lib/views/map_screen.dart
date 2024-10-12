@@ -151,7 +151,7 @@ class _MapScreenState extends State<MapScreen>
                   children: [
                     Padding(
                         padding: const EdgeInsets.symmetric(
-                                horizontal: BODY_PADDING + 5)
+                                horizontal: bodyPadding + 5)
                             .copyWith(top: 15),
                         child: Row(
                           children: [

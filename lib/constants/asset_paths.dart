@@ -2,7 +2,6 @@ class AppImages {
   static const _iconsPath = 'assets/icons';
   static const _imagesPath = 'assets/images';
 
-
   // images
   static const String map = "$_imagesPath/map.jpg";
   static const String room1 = "$_imagesPath/room1.avif";
@@ -10,7 +9,6 @@ class AppImages {
   static const String room3 = "$_imagesPath/room3.jpeg";
   static const String kitchen = "$_imagesPath/kitchen.jpeg";
   static const String user = "$_imagesPath/user_profile.jpeg";
-
 
   //svg icons
   static const String basket = "$_iconsPath/basket.svg";

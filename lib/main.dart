@@ -5,7 +5,7 @@ import 'package:flutter_engineer/core/app_theme.dart';
 import 'package:flutter_engineer/constants/constants.dart';
 import 'package:flutter_engineer/views/bottom_nav.dart';
 
-void main() async{
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await SystemChrome.setPreferredOrientations([
@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
                 title: 'Flutter Engr Peter',
                 debugShowCheckedModeBanner: false,
                 theme: ThemeData(
-                    fontFamily: FONT_FAMILY,
+                    fontFamily: fontFamily,
                     colorScheme: ColorScheme.fromSeed(seedColor: Colors.orange),
                     useMaterial3: true,
                     scaffoldBackgroundColor: AppColors.backgroundColor),
@@ -42,4 +42,3 @@ class MyApp extends StatelessWidget {
             }));
   }
 }
-

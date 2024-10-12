@@ -40,16 +40,17 @@ class _CustomRippleAnimationState extends State<CustomRippleAnimation>
     super.initState();
     _controllers = List.generate(
         numberOfRipples,
-            (index) => AnimationController(
+        (index) => AnimationController(
             vsync: this, duration: Duration(milliseconds: 800 + index * 200)));
     _animations = _controllers
         .map((controller) =>
-        Tween<double>(begin: 0.0, end: maxRippleRadius).animate(controller))
+            Tween<double>(begin: 0.0, end: maxRippleRadius).animate(controller))
         .toList();
     for (var controller in _controllers) {
       controller.addStatusListener((status) {
         if (status == AnimationStatus.completed) {
-          controller.reset(); // Reset immediately on completion to be ready for the next tap
+          controller
+              .reset(); // Reset immediately on completion to be ready for the next tap
         }
       });
     }
@@ -103,5 +104,3 @@ class _CustomRippleAnimationState extends State<CustomRippleAnimation>
     );
   }
 }
-
-

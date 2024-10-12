@@ -21,9 +21,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
     Container(color: Colors.black),
     const HomeScreen(),
     Container(color: Colors.black),
-
     Container(color: Colors.black),
-
   ];
 
   @override

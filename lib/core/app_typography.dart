@@ -2,26 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:flutter_engineer/constants/constants.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-
 class TextStyles {
   static get _bold => TextStyle(
       fontWeight: FontWeight.w700,
-      fontFamily: FONT_FAMILY,
+      fontFamily: fontFamily,
       height: 1.2,
       letterSpacing: -0.5);
 
   static get _medium => TextStyle(
       fontWeight: FontWeight.w500,
-      fontFamily: FONT_FAMILY,
+      fontFamily: fontFamily,
       height: 1.2,
       letterSpacing: -0.5);
 
   static get _regular => TextStyle(
       fontWeight: FontWeight.w400,
-      fontFamily: FONT_FAMILY,
+      fontFamily: fontFamily,
       height: 1.2,
       letterSpacing: -0.5);
-
 
   static TextStyle style11Medium = _medium.copyWith(fontSize: 11.0.sp);
   static TextStyle style12Medium = _medium.copyWith(fontSize: 12.0.sp);
